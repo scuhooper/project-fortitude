@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "CharacterAttributes.h"
 #include "FortitudeCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -18,6 +19,10 @@ class AFortitudeCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+
+	UPROPERTY( EditAnywhere, BlueprintReadWrite, Category = "Stats", meta = (AllowPrivateAccess = "true" ) )
+	class UCharacterAttributes* pStats;
+
 public:
 	AFortitudeCharacter();
 
